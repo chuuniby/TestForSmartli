@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManagerScript : MonoBehaviour
 {
     public static GameManagerScript instance;
+    public int collectibleCounter;
+    public int hp;
     public int maxHp;
     public GameObject player;
 
