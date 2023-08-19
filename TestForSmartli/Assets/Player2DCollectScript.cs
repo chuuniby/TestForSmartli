@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Player2DCollectScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string collectibleTag;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.CompareTag(collectibleTag))
+        {
+            GameManagerScript.instance.collectibleCounter++;
+            Destroy(collision.gameObject);
+        }
     }
 }
